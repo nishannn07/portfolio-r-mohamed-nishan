@@ -1,0 +1,84 @@
+/* /client/src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Montserrat:wght@700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text transition-colors duration-300 ease-in-out antialiased;
+    /* Prevent text selection highlighting */
+    /* -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-light-heading dark:text-dark-heading;
+  }
+  section {
+     /* Add extra top padding to account for fixed header */
+     @apply pt-28 md:pt-32 pb-20 md:pb-28 overflow-x-hidden;
+  }
+  /* Custom scrollbar (optional) */
+  ::-webkit-scrollbar {
+      width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+      @apply bg-gray-100 dark:bg-gray-800 rounded-lg;
+  }
+   ::-webkit-scrollbar-thumb {
+      @apply bg-violet-300 dark:bg-violet-500 rounded-lg border-2 border-transparent bg-clip-content;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+      @apply bg-violet-400 dark:bg-violet-600;
+  }
+}
+
+@layer components {
+    .section-title {
+        @apply text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16;
+    }
+     .glassmorphism-card {
+        @apply bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg border border-white/20 dark:border-gray-700/30 rounded-xl shadow-lg;
+    }
+    /* Button base styles (Tailwind handles variants) */
+    .btn {
+        @apply inline-block font-semibold tracking-wide px-6 py-3 md:px-8 md:py-3 rounded-full shadow-md transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2;
+    }
+    .btn-primary {
+        @apply bg-light-primary text-white hover:bg-light-primaryHover focus:ring-light-primary;
+        @apply dark:bg-dark-primary dark:hover:bg-dark-primaryHover dark:focus:ring-dark-primary;
+    }
+    .btn-secondary {
+        @apply bg-transparent border-2 text-light-primary border-light-primary hover:bg-light-primary/10 focus:ring-light-primary;
+        @apply dark:text-dark-primary dark:border-dark-primary dark:hover:bg-dark-primary/10 dark:focus:ring-dark-primary;
+    }
+    /* Skill tag base styles */
+    .skill-tag {
+        @apply inline-block px-4 py-1.5 rounded-md text-sm font-medium border transition-all duration-200 ease-in-out;
+        @apply bg-violet-100 text-violet-800 border-violet-200;
+        @apply dark:bg-violet-900/50 dark:text-violet-200 dark:border-violet-700;
+    }
+    .skill-tag:hover {
+         @apply shadow-md scale-105;
+         @apply dark:shadow-violet-500/20;
+    }
+    /* Specific tech colors */
+    .skill-tag.tech-aws {
+        @apply bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-900/50 dark:text-amber-200 dark:border-amber-700;
+    }
+     .skill-tag.tech-db {
+        @apply bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-900/50 dark:text-emerald-200 dark:border-emerald-700;
+    }
+     .skill-tag.tech-backend {
+        @apply bg-gray-100 text-gray-800 border-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600;
+    }
+     .skill-tag.tech-frontend {
+        @apply bg-sky-100 text-sky-800 border-sky-200 dark:bg-sky-900/50 dark:text-sky-200 dark:border-sky-700;
+    }
+}
