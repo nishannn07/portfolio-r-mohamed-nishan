@@ -66,14 +66,16 @@ const Hero = () => {
             View Projects
           </motion.a>
           <motion.a
-            href="/CV.pdf"
-            download
-            className="btn btn-secondary"
-            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Download CV
-          </motion.a>
+              href="https://drive.google.com/uc?export=download&id=1TNH9queKkxTMj4r5UaivRw9Az5ZctvQ-"
+              className="btn btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Download CV
+            </motion.a>
+
           <motion.a
              href={contactInfo.linkedin} // Link to LinkedIn
              target="_blank"
